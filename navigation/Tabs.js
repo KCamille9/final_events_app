@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Featured, Schedule, Tickets, Mine } from '../screens';
 import { COLORS, SIZES, FONTS, icons } from '../constants';
@@ -15,7 +15,7 @@ const TabIcon = ({ focused, icon }) => {
         source={icon}
         resizeMode="contain"
         style={{
-          tintColor: focused ? COLORS.white : COLORS.gray,
+          tintColor: focused ? COLORS.byu_royal : COLORS.byu_royal,
         }}
       />
     </View>
@@ -25,15 +25,31 @@ const TabLabel = ({ focused, text }) => {
   return focused ? (
     <McText
       h4
+      
       style={{
         marginTop: -25,
         paddingBottom: 10,
+        color: COLORS.byu_royal,
+        // color: focused ? COLORS.byu_royal : COLORS.byu_royal,
+        // tintColor: COLORS.byu_royal
       }}
     >
       {text}
     </McText>
   ) : (
-    <View />
+    <McText
+      h4
+      
+      style={{
+        marginTop: -25,
+        paddingBottom: 10,
+        // color: COLORS.byu_royal,
+        color: COLORS.byu_blueGray
+        // tintColor: COLORS.byu_royal
+      }}
+    >
+      {text}
+      </McText>
   );
 };
 
@@ -47,11 +63,11 @@ const Tabs = ({ params }) => {
           left: 0,
           right: 0,
           elevation: 0,
-          backgroundColor: COLORS.tabBar,
+          backgroundColor: COLORS.white,
           opacity: 0.9,
           borderTopColor: 'transparent',
           height: 111,
-          borderRadius: SIZES.radius,
+          borderRadius: 1
         },
       }}
     >

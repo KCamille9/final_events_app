@@ -324,7 +324,6 @@ const SectionImageFooter = styled.View`
     flex: 1;
     justify-content: flex-end;
     position: relative;
-    z-index: -1;
 `;
 
 const SectionImageHeader = styled.View`
